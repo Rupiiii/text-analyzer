@@ -79,7 +79,7 @@ def generate_detailed_response_with_gpt(query, index, chunks, k=3):
     return response.choices[0].message['content']
 
 # Example usage
-pdf_path = "Assignment 4_final_removed.pdf"  # Replace with your PDF file
+pdf_path = "your file"  # Replace with your PDF file
 text = extract_text_from_pdf(pdf_path)
 chunks = split_text_into_chunks(text, chunk_size=300)
 embeddings = generate_embeddings(chunks)
