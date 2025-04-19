@@ -11,25 +11,6 @@ This repository contains the implementation of a **Personal Knowledge Base Assis
 - **Custom Knowledge Base Support:** Easy integration with your personal or organizational documents.
 - **Extensible Design:** Modular implementation for scaling and adding new functionalities.
 
----
-
-## Project Structure
-
-```
-├── data/
-│   ├── knowledge_base/      # Store your knowledge base files here
-│   └── processed/           # Preprocessed files (e.g., embeddings)
-├── models/
-│   └── transformer_model/   # Hugging Face Transformer model files
-├── src/
-│   ├── retriever.py         # Code for the retrieval component
-│   ├── generator.py         # Code for the language generation component
-│   ├── preprocessing.py     # Data cleaning and preprocessing scripts
-│   └── main.py              # Main script to run the assistant
-├── README.md                # Project documentation
-├── requirements.txt         # Python dependencies
-└── .env                     # Environment variables
-```
 
 ---
 
