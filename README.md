@@ -34,24 +34,6 @@ This repository contains the implementation of a **Personal Knowledge Base Assis
    ```
 3. Set up your environment variables in `.env` (e.g., API keys for any external services).
 
----
-
-## Usage
-
-1. **Prepare the Knowledge Base:**
-   - Place your knowledge base files in the `data/knowledge_base/` directory.
-   - Run preprocessing:
-     ```bash
-     python src/preprocessing.py
-     ```
-
-2. **Start the Assistant:**
-   ```bash
-   python src/main.py
-   ```
-
-3. **Interact with the Assistant:**
-   - Provide queries through the CLI or integrate the assistant into a web app.
 
 ---
 
@@ -85,12 +67,3 @@ This repository contains the implementation of a **Personal Knowledge Base Assis
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
-
-## Acknowledgments
-- Hugging Face for providing the foundational libraries.
-- OpenAI and the broader NLP community for inspiration.
-
----
-
-Let me know if you'd like to customize this further!
