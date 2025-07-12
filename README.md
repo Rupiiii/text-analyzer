@@ -1,69 +1,56 @@
+# Personal Knowledge Base Assistant using Gemini and FAISS (RAG)
 
-# Personal Knowledge Base Assistant using RAG
-
-This repository contains the implementation of a **Personal Knowledge Base Assistant** powered by **Retrieval-Augmented Generation (RAG)** using Hugging Face Transformers. The assistant is designed to provide contextually accurate and personalized responses by leveraging your own knowledge base. 
+This repository contains the implementation of a Personal Knowledge Base Assistant powered by Retrieval-Augmented Generation (RAG) using Google Gemini 1.5 Flash and FAISS. It allows you to query your own documents (PDF/text) and get intelligent, context-aware responses.
 
 ---
 
 ## Features
-- **Retrieval-Augmented Generation (RAG):** Combines retrieval from a custom knowledge base with a language model for accurate and contextually relevant answers.
-- **Hugging Face Transformers:** Leverages state-of-the-art transformer models for natural language understanding and generation.
-- **Custom Knowledge Base Support:** Easy integration with your personal or organizational documents.
-- **Extensible Design:** Modular implementation for scaling and adding new functionalities.
 
+- Retrieval-Augmented Generation (RAG): Combines semantic search over your documents with generative AI responses.
+- Google Gemini 1.5 Flash: Fast, intelligent LLM via the official `google-generativeai` SDK.
+- FAISS and Sentence Transformers: Efficient similarity search using `faiss-cpu` and `MiniLM` embeddings.
+- PDF Support: Automatically extracts and chunks content from PDF files.
 
 ---
 
 ## Setup Instructions
 
 ### Prerequisites
-1. Python 3.8 or later
-2. Virtual environment (recommended)
-3. [Hugging Face Transformers](https://huggingface.co/docs/transformers/installation)
-4. A knowledge base in text, PDF, or similar formats.
+
+- Python 3.8 or higher
+- Google Gemini API key: https://makersuite.google.com/app/apikey
 
 ### Installation
-1. Clone the repository:
+
+1. Clone this repository:
    ```bash
    git clone https://github.com/your-username/personal-knowledge-base-assistant.git
    cd personal-knowledge-base-assistant
-   ```
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
-   ```
-3. Set up your environment variables in `.env` (e.g., API keys for any external services).
+3. Set your Gemini API key:
+   You can either:
+      1) Replace "your-api-key" directly in the code
+      2) Or use an environment variable:
 
-
----
-
-## Key Technologies
-- **Python:** Core programming language
-- **Hugging Face Transformers:** For state-of-the-art NLP
-- **FAISS:** Fast similarity search for efficient retrieval
-- **dotenv:** Manage environment variables
-- **PyTorch:** Backend framework for model fine-tuning
+      ```bash
+      export GEMINI_API_KEY="your-api-key"
 
 ---
 
-## Future Enhancements
-- Integration with external APIs (e.g., search engines, knowledge graphs).
-- Support for multi-modal data (images, audio).
-- Deployment as a web app or chatbot.
-- Real-time knowledge base updates.
+### How It Works
+
+1) Extracts text from your uploaded PDF file.
+2) Splits the text into chunks for embedding.
+3) Generates semantic embeddings using MiniLM.
+4) Stores embeddings in a FAISS index.
+5) Retrieves top-matching chunks based on your question.
+6) Sends context and question to Gemini and returns a generated answer.
 
 ---
 
-## Contribution Guidelines
-1. Fork the repository.
-2. Create a feature branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes and open a pull request.
+### License
 
----
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. 
 
